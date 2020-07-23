@@ -31,13 +31,10 @@ def make_contract():
         )
     """
     return binutils.assemble(
-        """
-    ((c (i (f (a))
-        (q (c (c (q #q) (c (f (r (a)))
-        (q ()))) (q (())))) (q (c (q #q) (c (r (a)) (q ()))))) (a)))
+    """
+    ((c (i 2 (q (c (c (q 1) (c 5 (q ()))) (q (())))) (q (c (q 1) (c 3 (q ()))))) 1))
     """
     )
-
 
 CONTRACT = make_contract()
 

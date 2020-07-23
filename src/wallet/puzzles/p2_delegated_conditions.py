@@ -18,7 +18,7 @@ from src.types.program import Program
 
 def puzzle_for_pk(public_key):
     aggsig = ConditionOpcode.AGG_SIG[0]
-    TEMPLATE = f"(c (c (q {aggsig}) (c (q 0x%s) (c (sha256tree (a)) (q ())))) (a))"
+    TEMPLATE = f"(c (c (q {aggsig}) (c (q 0x%s) (c (sha256tree 1) (q ())))) 1)"
     return Program.to(binutils.assemble(TEMPLATE % public_key.hex()))
 
 
